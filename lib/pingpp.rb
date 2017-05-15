@@ -119,7 +119,7 @@ module Pingpp
 
     if verify_ssl_certs
       request_opts = {:verify_ssl => OpenSSL::SSL::VERIFY_PEER,
-                      :ssl_ca_file => @ca_bundle_path,
+                      # :ssl_ca_file => @ca_bundle_path, 去掉指定的ca路径，使用系统默认根证书
                       :ssl_version => 'TLSv1'}
     else
       request_opts = {:verify_ssl => false,
